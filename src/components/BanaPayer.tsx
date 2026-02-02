@@ -1,9 +1,9 @@
 // src/components/DescriptionSection.tsx
 import React from 'react';
-import descriptionImg from '../assets/Description.png';     // main large image
+import Bannana from '../assets/BannanaVideoPlayer.png';     // main large image
 import polygonImg from '../assets/polygon 1.png';          // small overlay image in center
 
-const DescriptionSection: React.FC = () => {
+const BannanaVideoPalayer: React.FC = () => {
   return (
     <section className="w-full bg-[#f9f9f9] py-12 sm:py-16 md:py-20 lg:py-24 xl:py-28">
       <div className="mx-auto w-full max-w-screen-2xl px-5 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20">
@@ -19,7 +19,8 @@ const DescriptionSection: React.FC = () => {
             "
             style={{ fontFamily: "'Open Sans', sans-serif" }}
           >
-            Instant AI-powered Calorie Counting
+            
+           The Most Accurate Tracking for Rapid Results
           </h2>
 
           <p
@@ -32,9 +33,7 @@ const DescriptionSection: React.FC = () => {
             "
             style={{ fontFamily: "'Open Sans', sans-serif" }}
           >
-            Tired of manually tracking your calories? Qalzy’s AI camera instantly identifies raw foods,
-            packaged items, and even multiple ingredients on a plate with over 90% accuracy, and
-            automatically logs the detected calories and macros, all without any effort on your part.
+           Counting calories but not losing weight? AI meal scanner apps only estimate portions, Qalzy weighs your food down to the gram, so you can lose weight, effectively.
           </p>
         </div>
 
@@ -42,7 +41,7 @@ const DescriptionSection: React.FC = () => {
         <div className="mt-8 md:mt-10 lg:mt-12 relative flex justify-center">
           {/* Main description image */}
           <img
-            src={descriptionImg}
+            src={Bannana}
             alt="Qalzy description visual"
             className="
               w-full
@@ -56,29 +55,10 @@ const DescriptionSection: React.FC = () => {
             loading="lazy"
           />
 
-          {/* Small polygon image centered in the middle */}
-          <img
-            src={polygonImg}
-            alt="Polygon overlay"
-            className="
-              absolute
-              left-1/2 top-1/2
-              -translate-x-1/2 -translate-y-1/2
-              w-[80px] sm:w-[90px] md:w-[100px] lg:w-[110px] xl:w-[120px] 2xl:w-[131px]
-              h-auto
-              pointer-events-none
-              z-10
-              drop-shadow-lg
-            "
-            style={{
-              width: '131px',      // exact value on large screens
-              height: '131px',
-            }}
-          />
         </div>
       </div>
     </section>
   );
 };
 
-export default DescriptionSection;
+export default BannanaVideoPalayer;

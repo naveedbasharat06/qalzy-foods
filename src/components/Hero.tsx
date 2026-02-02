@@ -1,46 +1,60 @@
-// components/HeroSection.tsx
+// src/components/HeroSection.tsx
 import React from 'react';
-
-// Adjust path to match your project structure
-import heroImage from '../assets/Rectangle 1.png';  
-// or: '../assets/hero-kitchen-women-scale.jpg'
-// or: '/images/hero.jpg' if public folder
+import heroImage from '../assets/Rectangle 1.png';
 
 export default function HeroSection() {
   return (
     <section className="relative w-full overflow-hidden bg-gray-900">
-      {/* Maintain ~16:9 or your preferred ratio – adjust number if needed */}
-      <div className="relative w-full aspect-[4/3] md:aspect-[16/9] lg:aspect-[16/9] xl:aspect-[16/9]">
-        {/* The image itself */}
+   
+      <div className="relative w-full aspect-[4/3] sm:aspect-[3/2] md:aspect-[16/9] lg:aspect-[16/9] xl:aspect-[16/9]">
+       
         <img
           src={heroImage}
-          alt="Two women using smart kitchen scale in modern kitchen"
+          alt="Kitchen scene with smart scale"
           className="
             absolute inset-0 h-full w-full
-            object-cover               // fills area, crops edges if needed
-            object-center              // keeps people & scale centered
-            brightness-[0.85]          // optional: slight darken so text is readable
+            object-cover object-center
+            brightness-[0.85]
             transition-transform duration-700
-            hover:scale-[1.03]         // subtle zoom on hover (optional)
+            hover:scale-[1.03]
           "
-          // Improve loading experience for above-the-fold hero
           loading="eager"
           fetchPriority="high"
           decoding="async"
         />
 
-            {/* Text/content overlay – centered, responsive */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-5 text-center text-white sm:px-8 md:px-12 lg:px-16">
-          <div className="max-w-4xl space-y-5 sm:space-y-7 md:space-y-9">
-            <h1 className="text-3xl font-bold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl">
+        
+        <div className="
+          absolute inset-0
+          flex flex-col items-start justify-center
+          px-6 sm:px-10 md:px-16 lg:px-20 xl:px-24
+          text-white
+          z-10
+        ">
+          <div className="w-full max-w-[90%] sm:max-w-[80%] md:max-w-[815px] space-y-5 sm:space-y-7 md:space-y-9">
+            <h1 className="
+              text-3xl font-bold leading-tight tracking-tight
+              sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl
+            ">
               The only kitchen scale that
               <br className="hidden sm:block" />
               auto-tracks calories
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-100 max-w-3xl mx-auto">
-              World's first AI-powered scale that identifies food and logs calories automatically.
+            <p className="
+              text-base sm:text-lg md:text-xl lg:text-2xl
+              text-gray-100 max-w-3xl
+            ">
+              Lorem ipsum dolor sit amet consectetur. Enim vel pulvinar auctor id. 
+              Scelerisque in et molestie eget in auctor bibendum feugiat.
             </p>
+
+            <h1 className="
+              text-2xl font-bold text-green-400
+              sm:text-3xl md:text-4xl lg:text-5xl
+            ">
+              Get 50% discount
+            </h1>
 
             <div className="pt-4 sm:pt-6">
               <button className="
