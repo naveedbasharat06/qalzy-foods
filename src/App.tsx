@@ -3,7 +3,7 @@
 import Banner from './components/Banner'
 import HeroSection from './components/Hero'
 import Navbar from './components/Navbar'
-import FooterImage from './components/Footer'
+//import FooterImage from './components/Footer'
 import Qalzy from './components/Qalzy'
 import DescriptionSection from './components/Calorie-Counting'
 import CalorieConsumedSection from './components/Calories-Consumed'
@@ -22,20 +22,10 @@ function App() {
      
      <Navbar />
      <Banner></Banner>
-     <HeroSection></HeroSection>
+      <HeroSection />
      
-<Qalzy></Qalzy>
 
-< DescriptionSection></DescriptionSection>
-
-<CalorieConsumedSection></CalorieConsumedSection>
-
-
-<CrackingEgg></CrackingEgg>
-<BanaPayer></BanaPayer>
-
-<ScanMeal></ScanMeal>
-     <FooterImage></FooterImage>
+    
     </div>
       
     </>

@@ -1,86 +1,78 @@
-// src/components/FoodLoggingBanner.tsx
+// Banner.tsx
 import React from 'react';
 
-export default function FoodLoggingBanner() {
-  return (
-    <div className="w-full overflow-hidden bg-white">
-      {/* Desktop & large screens (1024px+) */}
-      <div className="hidden lg:flex justify-center">
-        <div
-          className="
-            w-full              
-            h-[87px]                 
-            bg-[#828282]
-            mt-[81px]               
-            mx-auto
-            flex items-center justify-center
-            relative
-                    
-          "
-          style={{
-            paddingTop: '32px',
-            paddingRight: '180px',
-            paddingBottom: '32px',
-            paddingLeft: '180px',
-          }}
-        >
-          <h2
-            className="
-              font-['Aeonik_Trial','DM_Sans',system-ui,sans-serif]
-              font-normal
-              text-[20px]                       // base at 1440px
-              2xl:text-[clamp(20px,1.2vw+10px,28px)]   // increases smoothly above ~1440px
-              leading-[100%]                    // line-height 100%
-              tracking-[0%]
-              text-[#0E1318]
-              text-center
-              max-w-[892px]                     // text width at 1440px
-              2xl:max-w-[clamp(892px,55vw,1200px)] // wider text container on ultra-wide
-              mx-auto
-            "
-          >
-            Use AI to identify and record the food you weigh and log calories automatically.
-            World's First Launch!
-          </h2>
-        </div>
-      </div>
+const Banner: React.FC = () => {
+  const bannerText =
+    "Use AI to identify and record the food you weigh and log calories automatically. World's First Launch!";
 
-      {/* Mobile & tablet view (up to 1023px) */}
-      <div className="lg:hidden">
-        <div
-          className="
-            w-full
-            h-[85px]                  // height 87px
-            bg-[#828282]
-            mt-[70px]                // top: 100px
-            flex items-center justify-center
-            relative
-          "
-          style={{
-            paddingTop: '15px',
-            paddingRight: 'clamp(20px, 15vw, 180px)',
-            paddingBottom: '23px',
-            paddingLeft: 'clamp(20px, 15vw, 180px)',
-          }}
-        >
-          <h2
-            className="
-              font-['Aeonik_Trial','DM_Sans',system-ui,sans-serif]
-              font-normal
-              text-[16px]               
-              leading-[100%]
-              tracking-[0%]
-              text-[#0E1318]
-              text-center
-              max-w-[318px]            
-              mx-auto
-            "
-          >
-            Use AI to identify and record the food you weigh and log calories automatically.
-            World's First Launch!
-          </h2>
-        </div>
-      </div>
+  return (
+    <div
+      className="
+        w-full
+
+        bg-[#828282]
+        absolute
+        /* Heights – keeping previous progression */
+        h-[87px]
+        sm:h-[87px]
+        md:h-[87px]
+        lg:h-[87px]
+        xl:h-[87px]     
+        2xl:h-[150px]    
+
+
+        
+        z-10
+        
+        top-[67px]
+        sm:top-[67px]
+        md:top-[72px]
+        lg:top-[81px]
+        xl:top-[81px]
+        2xl:top-[140px]
+
+
+        px-6              
+        sm:pt-5 sm:px-8     /* ≥640px: 20px top */
+        md:pt-6 md:px-12 md:pb-7   /* ≥768px: 24px top */
+        lg:pt-7 lg:px-16 lg:pb-8   /* ≥1024px: 28px top */
+        xl:pt-8 xl:px-[180px] xl:pb-8  /* ≥1280px (covers ~1440px): 32px top + your 180px sides */
+        2xl:pt-10 2xl:px-48 2xl:pb-10  /* ≥1536px (covers 2550px+): 40px top, wider sides */
+        
+        /* Gap – if you add more children later */
+        flex items-center justify-center
+        gap-10
+        sm:gap-16
+        md:gap-24
+        lg:gap-[149px]
+        xl:gap-[149px]
+        2xl:gap-[180px]
+        
+        text-center
+        text-[#031318]
+        opacity-100
+        transition-all duration-300
+      "
+    >
+      <p
+        className="
+          font-['Aeonik_Trial'] font-normal
+          text-base                 
+          sm:text-[17px]
+          md:text-[18px]
+          lg:text-[20px]
+          xl:text-[20px]
+          2xl:text-[34px]            
+          
+          leading-[100%]
+          tracking-[0%]
+          font-style-normal
+        "
+      >
+        {bannerText}
+      </p>
     </div>
   );
-}
+};
+
+export default Banner;
