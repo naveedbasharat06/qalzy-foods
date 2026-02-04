@@ -4,3 +4,12 @@
   font-weight: 400;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Inter';
+  src: 
+   
+    url('./Inter_18pt-Light.ttf') format('truetype');
+  font-weight: 400;          /* regular = 400 */
+          /* not italic */
+         /* prevents invisible text while loading */
+}

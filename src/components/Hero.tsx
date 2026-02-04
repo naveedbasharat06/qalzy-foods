@@ -76,8 +76,8 @@ const HeroSection: React.FC = () => {
             2xl:w-[1440px] 2xl:h-[713px]
           "
         />
-        {/* Overlay for text readability */}
-        <div className="absolute inset-0 bg-black/25" />
+        
+        
       </div>
 
 
@@ -86,118 +86,124 @@ const HeroSection: React.FC = () => {
 
 
 
-      {/* Hero Content */}
-
-
-      <div
+  <div
   className="
     relative z-10
-    container mx-auto
-    px-5              // mobile sides
-    sm:px-8
-    md:px-12
-    lg:px-16
-    xl:px-20
-    2xl:px-24
-    
-    /* ────────────────────────────────────────────────
-       Vertical spacing inside hero content area
-       175px from top + 263px from bottom at ~1440px
-    ──────────────────────────────────────────────── */
-    pt-[100px]        // base/mobile – smaller
-    sm:pt-[120px]
-    md:pt-[140px]
-    lg:pt-[160px]
-    xl:pt-[175px]     // your exact 175px at ≥1280px (~1440px typical)
-    2xl:pt-[200px]    // more room on ultra-wide
-    
-    pb-[140px]        // base/mobile
-    sm:pb-[160px]
-    md:pb-[200px]
-    lg:pb-[220px]
-    xl:pb-[150px]     // your exact 263px from bottom at ≥1280px
-    2xl:pb-[300px]    // generous on very large screens
-    
-    flex flex-col items-center justify-center
-    text-center text-white
+    w-full                           // full width control
     h-full
-
-    pr-[100px]
-    sm:pl-[100px]
-    md:pl-[100px]
-    lg:pl-[20px]
-    xl:pr-[500px]
-    2xl:pl-[100px]
-
-
-
-
+    
+    /* ── Very small left padding – content starts close to left edge ── */
+    pl-4                             // mobile: 16px from left edge
+    xs:pl-5                          // very small screens
+    sm:pl-6                          // ≥640px: ~24px
+    md:pl-8                          // ≥768px: 32px
+    lg:pl-10                         // ≥1024px: 40px
+    xl:pl-34                         // ≥1280px (~1440px): 48px – still small
+    2xl:pl-16                        // ≥1536px: 64px – comfortable but not centered
+    
+    /* Right side – prevent text from touching right edge on large screens */
+    pr-4 sm:pr-6 md:pr-10 lg:pr-16 xl:pr-24 2xl:pr-32
+    
+    /* Your vertical spacing – kept as before */
+    pt-[100px]  sm:pt-[120px]  md:pt-[140px]
+    lg:pt-[160px]  xl:pt-[175px]  2xl:pt-[200px]
+    
+    pb-[140px]  sm:pb-[160px]  md:pb-[200px]
+    lg:pb-[220px]  xl:pb-[263px]  2xl:pb-[300px]
+    
+    /* ── Key changes for left alignment ── */
+    flex flex-col
+    items-start                      // aligns children to the left
+    justify-center                   // vertical center if you want
+    text-left                        // text flows from left
+    text-white
   "
 >
+  {/* Headline – starts from left with no centering */}
   <h1
     className="
-      font-['Inter'] font-normal           // weight 400 = regular
-      text-[32px] leading-none             // mobile base
-      sm:text-[38px]
-      md:text-[42px]
-      lg:text-[46px]
-      xl:text-[48px]                       // your exact 48px at ≥1280px
-      2xl:text-[56px]                      // scales nicely larger
+   font-['Inter'] font-light
+     
+      tracking-normal
+
+    text-[32px] leading-none
+    sm:text-[38px]
+    md:text-[42px]
+    lg:text-[46px]
+    xl:text-[48px]
+    2xl:text-[56px]
+     
       
-      tracking-normal                      // letter-spacing: 0%
-      leading-none                         // line-height: 100%
-      
-      max-w-4xl mx-auto
       drop-shadow-xl
-      mb-6 md:mb-8 lg:mb-10
+      mb-5 sm:mb-6 md:mb-8 lg:mb-10
+      max-w-[90%] sm:max-w-[80%] md:max-w-[65%] lg:max-w-[55%] xl:max-w-[50%]
+      
     "
   >
     The only kitchen scale that
-    <br className="hidden md:block" />
+    <br className="" />
     auto-tracks calories
   </h1>
 
+  {/* Paragraph – also left-aligned */}
   <p
     className="
-      font-['Inter'] font-light            // or font-normal – adjust as needed
-      text-base                            // ~16px mobile
-      sm:text-lg
-      md:text-xl                           // ~20px tablet
-      lg:text-2xl                          // ~24–26px
-      xl:text-[28px]                       // strong but readable at 1440px
-      2xl:text-[32px]
-      
+      font-['Helvetica'] font-light
+      text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[20px] 2xl:text-[32px]
       tracking-normal
-      leading-relaxed                      // or leading-[120%] – tell me exact %
-      max-w-3xl mx-auto
+      leading-relaxed
       drop-shadow-lg
       mb-8 md:mb-10 lg:mb-12 xl:mb-14
+      max-w-[90%] sm:max-w-[80%] md:max-w-[65%] lg:max-w-[55%] xl:max-w-[45%]
     "
   >
-    Lorem ipsum dolor sit amet consectetur. Enim vel pulvinar auctor id. Scelerisque in et molestie eget in auctor bibendum feugiat.
-    
+    Lorem ipsum dolor sit amet consectetur. Enim vel pulvinar auctor id. 
+    Scelerisque in et molestie eget in auctor bibendum feugiat.
   </p>
 
 
-  <h1></h1>
 
+<h1
+    className="
+   font-['Helvetica'] font-light
+     
+      tracking-normal
+
+    text-[32px] leading-none
+    sm:text-[38px]
+    md:text-[42px]
+    lg:text-[36px]
+    xl:text-[36px]
+    2xl:text-[56px]
+     
+      
+      drop-shadow-xl
+      mb-5 sm:mb-6 md:mb-8 lg:mb-10
+      max-w-[90%] sm:max-w-[80%] md:max-w-[65%] lg:max-w-[55%] xl:max-w-[50%]
+      
+    "
+  >
+   Get 50% discount
+  </h1>
+
+
+  {/* Button area – also starts from left */}
   <div className="flex flex-col sm:flex-row gap-5 sm:gap-8">
     <button
       className="
         bg-green-600 hover:bg-green-700 active:bg-green-800
         text-white font-medium
-        px-8 py-4 rounded-full             // or rounded-xl – adjust
-        text-base sm:text-lg md:text-xl     // button text size
-        min-w-[180px]                       // better touch/click area
+        px-7 py-4 rounded-full
+        text-base sm:text-lg md:text-xl
+        min-w-[160px] sm:min-w-[180px]
         transition-all duration-300
         shadow-lg hover:shadow-xl
         hover:-translate-y-1
+        self-start                    // important: button hugs left too
       "
     >
       PREORDER now
     </button>
-
-   
   </div>
 </div>
       
