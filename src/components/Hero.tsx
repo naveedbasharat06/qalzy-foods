@@ -10,38 +10,49 @@ const HeroSection: React.FC = () => {
         overflow-hidden
         bg-gray-100               // fallback color
         
-        /* Minimum section heights – adjusted to respect image size */
-        min-h-[380px]             // very small mobile
-        sm:min-h-[420px]
-        md:min-h-[500px]
-        lg:min-h-[713px]          // matches your image height at lg+
-        xl:min-h-[713px]
-        2xl:min-h-[820px]         // extra room on huge screens
         
+       
+        
+                
         /* ────────────────────────────────────────────────
            Top padding = distance from top of THIS section
            Goal: image starts right below banner (170px tall)
         ──────────────────────────────────────────────── */
-        pt-[170px]                // base / mobile (<640px)
-        sm:pt-[170px]             // ≥640px
-        md:pt-[170px]             // ≥768px – tablets
-        lg:pt-[170px]             // ≥1024px – most desktops & 1440px
-        xl:pt-[170px]             // ≥1280px
-        2xl:pt-[170px]            // ≥1536px – very large / ultrawide
+        pt-[168px]   
+                     
+        min-[360px]:pt-[170px]             // ≥360px
+        min-[768px]:pt-[170px]             // ≥768px – tablets
+        min-[1024px]:pt-[170px]            // ≥1024px – most desktops & 1440px
+        min-[1280px]:pt-[170px]            // ≥1280px
+        min-[1440px]:pt-[168px]            // ≥1440px
+        min-[1600px]:pt-[200px]            // ≥1600px
+        min-[1720px]:pt-[210px]            // ≥1720px
+        min-[1850px]:pt-[220px]            // ≥1850px
+        min-[1920px]:pt-[240px]            // ≥1920px
+        min-[2150px]:pt-[260px]            // ≥2150px
+        min-[2300px]:pt-[270px]            // ≥2300px
+        min-[2450px]:pt-[276px]            // ≥2450px
+        min-[2560px]:pt-[280px]            // ≥2560px
+
         
-        /* If navbar + banner total height changes per breakpoint,
-           you can make pt- different like this example:
-        pt-[140px] md:pt-[160px] lg:pt-[170px] 2xl:pt-[190px]
-        */
+        
+        
       "
     >
       
       <div className="absolute inset-0  pt-[156px]                // base / mobile (<640px)
-        sm:pt-[160px]             // ≥640px
-        md:pt-[160px]             // ≥768px – tablets
-        lg:pt-[167px]             // ≥1024px – most desktops & 1440px
-        xl:pt-[167px]             // ≥1280px
-        2xl:pt-[170px]  ">
+        
+        
+        
+       min-[360px]:pt-[160px]             // ≥360px
+        min-[768px]:pt-[160px]             // ≥768px – tablets
+        min-[1024px]:pt-[167px]            // ≥1024px – most desktops & 1440px
+        min-[1280px]:pt-[167px]            // ≥1280px
+        min-[1440px]:pt-[170px]            // ≥1440px
+        min-[1536px]:pt-[175px]            // ≥1536px
+        min-[1920px]:pt-[200px]            // ≥1920px
+        min-[2560px]:pt-[280px]            // ≥2560px
+  ">
        
        
         <img
@@ -52,14 +63,19 @@ const HeroSection: React.FC = () => {
 
 
             w-full h-full
-            sm:w-full sm:h-full
-            lg:w-1250 lg:h-713
-            xl:w-713 xl:h-713
-
+            
+            min-[320px]:w-[320px] min-[320px]:h-full
+            min-[360px]:w-[360px] min-[360px]:h-full
+            min-[768px]:w-[768px] min-[768px]:h-full
+            min-[1024px]:w-[1024px] min-[1024px]:h-full
+            min-[1280px]:w-[1280px] min-[1280px]:h-full
+            min-[1440px]:w-[1440px] min-[1440px]:h-full
+            min-[1536px]:w-[1536px] min-[1536px]:h-full
+            min-[1920px]:w-[1920px] min-[1920px]:h-full
+            min-[2560px]:w-[2560px] min-[2560px]:h-[2560px]
+           
   
 
-            object-cover
-           
             transition-transform duration-700
             hover:scale-105
             
@@ -68,12 +84,7 @@ const HeroSection: React.FC = () => {
             
             
             
-            lg:w-[1440px] lg:h-[713px]
            
-           
-            
-            xl:w-[1440px] xl:h-[713px]
-            2xl:w-[1440px] 2xl:h-[713px]
           "
         />
         
