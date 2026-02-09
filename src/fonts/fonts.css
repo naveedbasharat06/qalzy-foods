@@ -2,8 +2,22 @@
   font-family: 'Helvetica';
   src: url('./Helvetica.ttf') format('truetype');
   font-weight: 400;
-  font-style: normal;
+  font-style:normal;
+  
 }
+
+
+
+@font-face {
+  font-family: 'Helvetica1';
+  src: url('./Helvetica.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+ 
+}
+
+
+
 @font-face {
   font-family: 'Inter';
   src: 
@@ -13,6 +27,20 @@
           /* not italic */
          /* prevents invisible text while loading */
 }
+
+
+
+
+@font-face {
+  font-family: 'Inter700';
+  src: 
+   
+    url('./Inter_18pt-Bold.ttf') format('truetype');
+  font-weight: 700; 
+  font-style: bold;         /* bold = 700 */
+         
+}
+
 
 @font-face {
   font-family: 'Aeonik Trial';

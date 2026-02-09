@@ -19,10 +19,13 @@ function App() {
 
 
     <div>
-     
-     <Navbar />
-     <Banner></Banner>
+
+      <Navbar />
+      <Banner />
       <HeroSection />
+     
+    
+      
      
 
     

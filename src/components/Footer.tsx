@@ -1,155 +1,309 @@
-import React, { useState } from 'react';
-import logoImg from '../assets/logo.png';
+// HeroSection.tsx
+import React from 'react';
+import heroImage from '../assets/rectangle 1.png'; // your image file
 
-const Navbar: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-
-  const navItems = [
-    { label: 'AI Scale', href: '#' },
-    { label: 'Calorie Tracking App', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Shop', href: '#' },
-  ];
-
+const HeroSection: React.FC = () => {
   return (
-    <nav
+    <section
       className="
-        fixed top-0 left-0 z-50 w-full
-        bg-white shadow-md
+        relative w-full h-[120vh]
+        overflow-hidden
+        bg-gray-100               // fallback color
+        
+        
        
-        h-[clamp(67px,81px,140px)]           /* fluid navbar height */
-        transition-all duration-300
+        
+                
+       
+        
+        pt-[168px]   
+                     
+        min-[360px]:pt-[170px]             // ≥360px
+        min-[768px]:pt-[170px]             // ≥768px – tablets
+        min-[1024px]:pt-[170px]            // ≥1024px – most desktops & 1440px
+        min-[1280px]:pt-[170px]            // ≥1280px
+        min-[1440px]:pt-[150px]            // ≥1440px
+        min-[1600px]:pt-[200px]            // ≥1600px
+        min-[1720px]:pt-[210px]            // ≥1720px
+        min-[1850px]:pt-[220px]            // ≥1850px
+        min-[1920px]:pt-[240px]            // ≥1920px
+        min-[2150px]:pt-[260px]            // ≥2150px
+        min-[2300px]:pt-[270px]            // ≥2300px
+        min-[2450px]:pt-[276px]            // ≥2450px
+        min-[2560px]:pt-[280px]            // ≥2560px
+
+        
+        
+        
       "
     >
-      <div
-        className="
-          flex items-center justify-between
-          h-full
-          mx-auto
-          max-w-[2560px]                      /* respect your largest design */
-          pl-[clamp(18px,60px,110px)]        /* fluid left padding */
-          pr-[clamp(12px,45px,65px)]         /* fluid right padding */
-        "
-      >
-        {/* Logo */}
-        <div className="flex-shrink-0">
-          <img
-            src={logoImg}
-            alt="Logo"
-            className="
-              h-[clamp(27px,41px,130px)] 
-                                                       /* scales smoothly from mobile → ultra-wide */
-              w-[clamp(130px,200px,350px)]
-              object-contain
-              transition-all duration-300
-            "
-          />
-        </div>
+      
+      <div className="absolute inset-0  pt-[156px]                // base / mobile (<640px)
+        
+        
+        
+       min-[360px]:pt-[160px]             // ≥360px
+        min-[768px]:pt-[160px]             // ≥768px – tablets
+        min-[1024px]:pt-[167px]            // ≥1024px – most desktops & 1440px
+        min-[1280px]:pt-[167px]            // ≥1280px
+        min-[1440px]:pt-[168px]            // ≥1440px
+        min-[1600px]:pt-[175px]  
+        min-[1720px]:pt-[180px]            // ≥1720px
+         min-[1850px]:pt-[190px]            // ≥1850px
+        min-[1920px]:pt-[200px] 
+        min-[2150px]:pt-[220px]            // ≥2150px
+        min-[2300px]:pt-[230px]            // ≥2300px
+        min-[2450px]:pt-[240px]            // ≥2450px
+        min-[2560px]:pt-[280px]            // ≥2560px
+  ">
+       
+       
+        <img
+          src={heroImage}
+          alt="Hero Illustration"
+          className="
+             inset-0
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center space-x-[clamp(78px,7.2vw,138px)]">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="
-                font-['Helvetica'] font-normal
-                text-[clamp(16px,16px,28px)]     /* fluid font size */
-                text-black
-                hover:text-gray-700
-                transition-colors
-                whitespace-nowrap
-              "
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
 
-        {/* Mobile Hamburger */}
-        <div className="lg:hidden">
-          <button
-            type="button"
-            onClick={toggleMenu}
-            className="
-              p-2 rounded-md
-              font-['Helvetica'] font-normal
-              text-gray-700 hover:text-blue-600
-              focus:outline-none focus:ring-2 focus:ring-blue-500
-            "
-            aria-label="Toggle menu"
-          >
-            <svg
-              className="h-8 w-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d={isMenuOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-              />
-            </svg>
-          </button>
-        </div>
+            w-full h-full
+            
+            
+
+            min-[360px]:w-full min-[360px]:h-[178px]
+            min-[768px]:w-full min-[768px]:h-[380px]
+            min-[1024px]:w-full min-[1024px]:h-[550px]
+            min-[1130px]:w-full min-[1130px]:h-[590px]
+            min-[1280px]:w-full min-[1280px]:h-[633px]
+            min-[1440px]:w-full     min-[1440px]:h-[713px]
+
+            min-[1600px]:w-full min-[1600px]:h-[792px]
+            min-[1720px]:w-full min-[1720px]:h-[851px]
+            min-[1850px]:w-full min-[1850px]:h-[915px]
+
+            min-[1920px]:w-full min-[1920px]:h-[950px]
+            min-[2150px]:w-full min-[2150px]:h-[1065px]
+            min-[2300px]:w-full min-[2300px]:h-[1138px]
+            min-[2450px]:w-full min-[2450px]:h-[1212px]
+            min-[2560px]:w-full min-[2560px]:h-[1268px]
+           
+  
+
+            transition-transform duration-700
+            hover:scale-105
+            
+            /* Force your exact size from lg onwards + center it */
+            
+            
+            
+            
+           
+          "
+        />
+        
+        
       </div>
 
-      {/* Mobile Menu Overlay + Sidebar */}
-      {isMenuOpen && (
-        <>
-          {/* Backdrop */}
-          <div
-            className="lg:hidden fixed inset-0 z-30 bg-black/50 backdrop-blur-sm"
-            onClick={() => setIsMenuOpen(false)}
-          />
-
-          {/* Slide-in Menu */}
-          <div
-            className="
-              lg:hidden fixed top-0 right-0 z-40 h-full
-              w-[clamp(240px,280px,320px)]                                                     /* fluid sidebar width */
-              bg-white shadow-[-10px_0_25px_-5px_rgba(0,0,0,0.3)]
-              transition-transform duration-300 ease-in-out
-            "
-            style={{ transform: isMenuOpen ? 'translateX(0)' : 'translateX(100%)' }}
-          >
-            <div className="flex flex-col h-full">
 
 
 
 
-              {/* Close area / padding at top */}
-              <div className="px-5 pt-[clamp(56px,9vh,100px)] pb-6 flex-1 overflow-y-auto">
-                <div className="flex flex-col space-y-6">
-                  {navItems.map((item) => (
-                    <a
-                      key={item.label}
-                      href={item.href}
-                      className="
-                        font-['Helvetica'] font-normal
-                        text-[clamp(16px,20px,24px)]   /* larger on mobile for touch */
-                        text-black
-                        hover:text-gray-700
-                        transition-colors
-                        py-2
-                      "
-                      onClick={() => setIsMenuOpen(false)}
-                    >
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      )}
-    </nav>
+
+
+  <div
+  className="
+    relative z-10
+    w-full                           // full width control
+    h-full
+    
+    /* ── Very small left padding – content starts close to left edge ── */
+    pl-4 
+                                // mobile: 16px from left edge
+    xs:pl-5                          // very small screens
+    min-[360px]:pl-6 
+    min-[768px]:pl-7                 // ≥768px: ~28px
+    min-[1024px]:pl-8                // ≥1024px: 32px
+    min-[1280px]:pl-10               // ≥1280px: 40px
+    min-[1440px]:pl-34              // ≥1440px (~1600px): 48px – still small
+    min-[1600px]:pl-16
+    min-[1720px]:pl-16
+    min-[1850px]:pl-16
+    min-[1920px]:pl-16
+    min-[2150px]:pl-16
+    min-[2300px]:pl-16
+    min-[2450px]:pl-16
+
+    min-[2560px]:pl-16  
+    
+   
+    pr-4 
+    min-[360px]:pr-6 
+    min-[768px]:pr-10 
+    min-[1024px]:pr-16 
+    min-[1280px]:pr-24 
+    min-[1440px]:pr-32
+    min-[1600px]:pr-32
+    min-[1720px]:pr-32
+    min-[1850px]:pr-32
+    min-[1920px]:pr-32
+    min-[2150px]:pr-32
+    min-[2300px]:pr-32
+    min-[2450px]:pr-32
+    min-[2560px]:pr-32
+    
+  
+    pt-[100px]  min-[360px]:pt-[120px]
+      min-[768px]:pt-[140px]
+    min-[1024px]:pt-[160px] 
+     min-[1280px]:pt-[175px]
+    min-[1440px]:pt-[200px]
+     min-[1600px]:pt-[200px]
+    min-[1720px]:pt-[200px]
+    min-[1850px]:pt-[200px]
+    min-[1920px]:pt-[200px]
+    min-[2150px]:pt-[200px]
+    min-[2300px]:pt-[200px] 
+    min-[2450px]:pt-[200px]
+    min-[2560px]:pt-[200px]
+
+    
+    pb-[140px]
+      min-[360px]:pb-[160px]
+        min-[768px]:pb-[200px]
+    min-[1024px]:pb-[220px] 
+     min-[1280px]:pb-[263px] 
+   min-[1440px]:pb-[300px]
+      min-[1600px]:pb-[300px]
+    min-[1720px]:pb-[300px]
+    min-[1850px]:pb-[300px]
+    min-[1920px]:pb-[300px]
+    min-[2150px]:pb-[300px]
+    min-[2300px]:pb-[300px]
+    min-[2450px]:pb-[300px]
+
+    min-[2560px]:pb-[300px] 
+
+
+
+
+    
+    /* ── Key changes for left alignment ── */
+    flex flex-col
+    items-start                      // aligns children to the left
+    justify-center                   // vertical center if you want
+    text-left                        // text flows from left
+    text-white
+  "
+>
+  {/* Headline – starts from left with no centering */}
+  <h1
+    className="
+   font-['Inter'] font-light
+     
+      tracking-normal
+
+    text-[32px] leading-none
+    min-[360px]:text-[38px]
+    min-[768px]:text-[42px]
+    min-[1024px]:text-[46px]
+    min-[1280px]:text-[48px]
+    min-[1440px]:text-[56px]
+     
+      
+      drop-shadow-xl
+      mb-5 
+      min-[360px]:mb-6 min-[768px]:mb-8 min-[1024px]:mb-10
+      min-[1280px]:mb-12 min-[1440px]:mb-14
+      max-w-[90%] 
+      min-[360px]:max-w-[80%]
+      min-[768px]:max-w-[65%]
+      min-[1024px]:max-w-[55%]
+      min-[1280px]:max-w-[50%]
+      min-[1440px]:max-w-[50%]
+
+      min-[360px]:max-w-[80%] min-[768px]:max-w-[65%] min-[1024px]:max-w-[55%] min-[1280px]:max-w-[50%]
+      min-[1440px]:max-w-[50%]
+
+     
+      
+    "
+  >
+    The only kitchen scale that
+    <br className="" />
+    auto-tracks calories
+  </h1>
+
+  {/* Paragraph – also left-aligned */}
+  <p
+    className="
+      font-['Helvetica'] font-light
+      text-base sm:text-lg md:text-xl lg:text-2xl xl:text-[20px] 2xl:text-[32px]
+      tracking-normal
+      leading-relaxed
+      drop-shadow-lg
+      mb-8 
+      min-[360px]:mb-10 min-[768px]:mb-12 min-[1024px]:mb-14
+      max-w-[90%] min-[360px]:max-w-[80%] min-[768px]:max-w-[65%] min-[1024px]:max-w-[55%] min-[1280px]:max-w-[45%]
+    "
+  >
+    Lorem ipsum dolor sit amet consectetur. Enim vel pulvinar auctor id. 
+    Scelerisque in et molestie eget in auctor bibendum feugiat.
+  </p>
+
+
+
+<h1
+    className="
+   font-['Helvetica'] font-light
+     
+      tracking-normal
+
+    text-[32px] leading-none
+    min-[360px]:text-[38px]
+    min-[768px]:text-[42px]
+    min-[1024px]:text-[36px]
+    min-[1280px]:text-[36px]
+    min-[1440px]:text-[56px]
+     
+      
+      drop-shadow-xl
+      mb-5 
+      min-[360px]:mb-6 min-[768px]:mb-8 min-[1024px]:mb-10
+      max-w-[90%] min-[360px]:max-w-[80%] min-[768px]:max-w-[65%] min-[1024px]:max-w-[55%] min-[1280px]:max-w-[50%]
+      
+    "
+  >
+   Get 50% discount
+  </h1>
+
+
+  {/* Button area – also starts from left */}
+  <div className="flex flex-col sm:flex-row gap-5 sm:gap-8">
+    <button
+      className="
+        bg-green-600 hover:bg-green-700 active:bg-green-800
+        text-white font-medium
+        px-7 py-4 rounded-full
+        text-base sm:text-lg md:text-xl
+        min-w-[160px] min-[360px]:min-w-[180px]
+        transition-all duration-300
+        shadow-lg hover:shadow-xl
+        hover:-translate-y-1
+        self-start                    // important: button hugs left too
+      "
+    >
+      PREORDER now
+    </button>
+  </div>
+</div>
+      
+
+
+      
+
+
+
+    </section>
   );
 };
 
-export default Navbar;
+export default HeroSection;

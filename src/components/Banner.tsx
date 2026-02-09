@@ -9,9 +9,11 @@ const Banner: React.FC = () => {
     <div
       className="
         w-full
-
+        max-w-full
         bg-[#828282]
         absolute
+
+
         /* Heights – keeping previous progression */
          h-[67px] min-[320px]:h-[87px] min-[768px]:h-[87px] min-[1024px]:h-[87px] 
         min-[1220px]:h-[87px] min-[1440px]:h-[87px] min-[1600px]:h-[100px] 
