@@ -15,8 +15,10 @@ const Hero = () => {
       
        
       
-        min-[1440px]:pt-[clamp(134px,calc(168px*100vw/1440px),280px)] 
-        min-[2300px]:pt-[clamp(260px,calc(270px*100vw/2300px),270px)] 
+        pt-[clamp(134px,calc(168px*100vw/1440px),280px)] 
+        min-[1600px]:
+        min-[2300px]:pt-[clamp(260px,calc(268px*100vw/2300px),270px)] 
+        min-[2400px]:pt-[clamp(270px,calc(271px*100vw/2400px),280px)] 
         
        
 
@@ -29,6 +31,10 @@ const Hero = () => {
       <div
         className={`
           w-full
+          
+          
+
+
           max-w-full
 
           absolute
@@ -82,28 +88,26 @@ const Hero = () => {
   
 
 
-  <h2  
-     className={`
+<h2
+  className={`
 
-      font-['Inter'] font-light
 
-      tracking-normal leading-none
-      text-white
+    font-['Inter']
+    font-normal              
+    tracking-normal
+    leading-none            
+    text-white
 
-      text-[clamp(20px,calc(48px*100vw/1440px),88px)]   
+    text-[clamp(20px,calc(50px*100vw/1440px),88px)]
 
-      leading-tight
+    mb-[clamp(12px,calc(20px*100vw/1440px),39px)]
 
-      mb-[clamp(12px,calc(20px*100vw/1440px),39px)]
+    max-w-[clamp(305px,calc(815px*100vw/1440px),1450px)]
 
-      max-w-[clamp(80%,calc(815px*100vw/1440px),90%)]
-
-    `}
-  >
-
-   The only kitchen scale that auto-tracks calories
-  </h2>
-
+  `}
+>
+  The only kitchen scale that auto-tracks calories
+</h2>
  
 
 
@@ -118,10 +122,13 @@ const Hero = () => {
        
         text-white
 
-
-         min-text-[clamp(15px,calc(20px*100vw/1440px),36px)]
-
-      max-w-[clamp(305px,calc(850px*100vw/1440px),1410px)]
+            text-[clamp(6px,calc(20px*100vw/1440px),36px)]
+            
+       w-[clamp(350px,calc(590px*100vw/1024px),1410px)] 
+       
+        w-[clamp(350px,calc(815px*100vw/1440px),1410px)] 
+       
+      
       
 
     `}
@@ -137,17 +144,21 @@ const Hero = () => {
 
   <p
     className={`
-      text-[clamp(16px,calc(22px*100vw/1440px),40px)]     // adjust base
+
+      text-[clamp(12px,calc(36px*100vw/1440px),64px)] 
+
      font-['Helvetica'] 
      text-white
         tracking-normal leading-none
-      mb-[clamp(12px,calc(16px*100vw/1440px),32px)]
-
-       mt-[clamp(12px,calc(16px*100vw/1440px),22px)]
 
 
+      mb-[clamp(6px,calc(16px*100vw/1440px),32px)]
 
-      max-w-[clamp(70%,calc(790px*100vw/1440px),1400px)]
+       mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
+
+
+
+      max-w-[clamp(100px,calc(790px*100vw/1440px),1400px)]
     `}
   >
     Get 50% discount
@@ -161,8 +172,9 @@ const Hero = () => {
     flex items-center
 
 
- max-mb-[clamp(70%,calc(32px*100vw/1440px),40px)]
- max-mt-[clamp(70%,calc(16px*100vw/1440px),38px)]
+ max-mb-[clamp(4px,calc(32px*100vw/1440px),40px)]
+
+ max-mt-[clamp(6px,calc(16px*100vw/1440px),38px)]
 
 
   
@@ -182,7 +194,7 @@ max-w-[clamp(70%,calc(790px*100vw/1440px),1400px)]
       
      min-[1440px]:w-[clamp(240px,calc(392px*100vw/1440px),695px)] 
 
-     
+     w-[clamp(140px,calc(392px*100vw/1440px),695px)] 
       
       object-contain
       drop-shadow-md
@@ -202,20 +214,24 @@ max-w-[clamp(70%,calc(790px*100vw/1440px),1400px)]
           font-['Inter700'] 
           
           bg-[#4AD769]
-          hover:bg-green-700
+          hover:bg-[#48C263]
          
           text-white
 
 
-      rounded-[clamp(22px,calc(24px*100vw/1440px),48px)]
+      rounded-[clamp(18px,calc(24px*100vw/1440px),48px)]
+
+   mt-[clamp(8px,calc(32px*100vw/1440px),64px)] 
 
 
-      w-[clamp(200px,calc(263px*100vw/1440px),467px)]
-      h-[clamp(50px,calc(56px*100vw/1440px),100px)]
-      px-[clamp(30px,calc(50px*100vw/1440px),80px)]     // better than fixed 50px/15px mix
-      text-[clamp(14px,calc(20px*100vw/1440px),36px)]
+
+      w-[clamp(150px,calc(263px*100vw/1440px),467px)]
+      h-[clamp(30px,calc(56px*100vw/1440px),100px)]
+      px-[clamp(15px,calc(50px*100vw/1440px),80px)] 
+          
+      text-[clamp(2px,calc(20px*100vw/1440px),36px)]
       
-      shadow-[0_4px_6px_rgba(74,215,105,0.6)]
+      shadow-[0_4px_6px_rgba(74,215,105,1)]
       
     `}
   >

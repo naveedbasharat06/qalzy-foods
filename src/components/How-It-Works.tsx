@@ -1,92 +1,212 @@
-this is my code i wnat you to tell me that i have made some break points I want that i ust give value to 1440px which should be my 100percent and thn all other breakpoint will be assign the percentages and they will have there percentages and they will change according to the inpect breakpoints is it possible what logic you make or suggect
+import React, { useState } from 'react';
+import logoImg from '../assets/logo.png';
 
-<div
-      className="
-        w-full
-        max-w-full
-        bg-[#828282]
-        absolute
+const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  const navItems = [
+    { label: 'AI Scale', href: '#' },
+    { label: 'Calorie Tracking App', href: '#' },
+    { label: 'Blog', href: '#' },
+    { label: 'Shop', href: '#' },
+  ];
 
-        /* Heights – keeping previous progression */
-
-        
-         h-[67px] min-[320px]:h-[87px] min-[768px]:h-[87px] min-[1024px]:h-[87px] 
-        min-[1220px]:h-[87px] min-[1440px]:h-[87px] min-[1600px]:h-[100px] 
-        min-[1720px]:h-[105px] min-[1850px]:h-[110px] min-[1920px]:h-[120px]
-        min-[2150px]:h-[130px] min-[2300px]:h-[135px] min-[2450px]:h-[138px]
-        min-[2560px]:h-[140px]
+  return (
+    <nav
+      className={`
+        fixed top-0 left-0 z-50 w-full
+        bg-white shadow-md
       
 
-
+         h-[clamp(67px,calc(81px*100vw/1440px),140px)]
         
-        z-10
-        
-        top-[67px]
-        min-[360px]:top-[67px]
-          min-[768px]:top-[70px] min-[1024px]:top-[70px]
-          min-[1220px]:top-[77px] min-[1440px]:top-[81px] min-[1600px]:top-[100px]
-          min-[1720px]:top-[105px] min-[1850px]:top-[110px] min-[1920px]:top-[120px]
-          min-[2150px]:top-[130px] min-[2300px]:top-[135px] min-[2450px]:top-[138px]
-          min-[2560px]:top-[140px]
-       
+         transition-all duration-300
+      `}
+    >
 
-
-
-
-          pl-[18px] pr-[12px]
-          min-[320px]:pl-[18px] min-[320px]:pr-[12px]
-          min-[768px]:pl-[40px] min-[768px]:pr-[30px]
-          min-[1024px]:pl-[43px] min-[1024px]:pr-[32px]
-          min-[1220px]:pl-[55px] min-[1220px]:pr-[40px]
-          min-[1440px]:pl-[140px] min-[1440px]:pr-[20px]
-          min-[1600px]:pl-[150px] min-[1600px]:pr-[21px]
-          min-[1720px]:pl-[160px] min-[1720px]:pr-[22px]
-          min-[1850px]:pl-[170px] min-[1850px]:pr-[22px]
-          min-[1920px]:pl-[180px] min-[1920px]:pr-[23px]
-          min-[2150px]:pl-[190px] min-[2150px]:pr-[24px]
-          min-[2300px]:pl-[200px] min-[2300px]:pr-[26px]
-          min-[2450px]:pl-[210px] min-[2450px]:pr-[28px]
-          min-[2560px]:pl-[220px] min-[2560px]:pr-[30px]
+      
+      
+      <div
+        className={`
+          flex items-center justify-between h-full mx-auto
+         
           max-w-[2560px]
 
-        /* Gap – if you add more children later */
-        flex items-center justify-center
-        gap-10
-        min-[360px]:gap-16
-        min-[768px]:gap-20 min-[1024px]:gap-20
-          min-[1220px]:gap-24 min-[1440px]:gap-24 min-[1600px]:gap-24
-          min-[1720px]:gap-24 min-[1850px]:gap-24 min-[1920px]:gap-24
-          min-[2150px]:gap-24 min-[2300px]:gap-24 min-[2450px]:gap-24
-          min-[2560px]:gap-24
+
+           pl-[clamp(18px,calc(60px*100vw/1440px),110px)]
+            pr-[clamp(12px,calc(45px*100vw/1440px),65px)]
+
+        `}
+      >
+
+
+        
+        
+        <div className="flex-shrink-0">
+          <img
+            src={logoImg}
+            alt="Logo"
+            className={`
+
+              
+
+              h-[clamp(30px,calc(41*100vw/1440px),70px)]
+
+
+
+              
+              
+
+              w-[clamp(140px,calc(200px*100vw/1440px),330px)]
+              
+              
+              
+
+
+              transition-all duration-300
+
+            `}
+          />
+        </div>
+
+       
+       
+       
+        <div
+          className={`
+            hidden lg:flex items-center
+
+             space-x-[clamp(50px,calc(78px*100vw/1440px),138px)]
+
+          
+            `}
+        >
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className={`
+                font-['Helvetica'] font-normal
+
+
+
+               
+                 text-[clamp(12px,calc(16px*100vw/1440px),26px)]
+               
+                text-black hover:text-gray-700 transition-colors
+             
+             
+                `}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+
        
         
-        text-center
-        text-[#031318]
-        opacity-100
-        transition-all duration-300
-      "
-    >
-      <p
-        className="
-          font-['Aeonik Trial'] font-normal
-          text-base 
-          
-          
-          min-[360px]:text-[17px]
+        <button
+          className="lg:hidden flex items-center justify-center focus:outline-none"
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        >
+          <svg
+            className="w-8 h-8 text-black"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {isMenuOpen ? (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            ) : (
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            )}
+          </svg>
+        </button>
+      </div>
 
-            min-[768px]:text-[18px] min-[1024px]:text-[18px]
-            min-[1220px]:text-[19px] min-[1440px]:text-[20px] min-[1600px]:text-[22px]
-            min-[1720px]:text-[24px] min-[1850px]:text-[26px] min-[1920px]:text-[28px]
-            min-[2150px]:text-[30px] min-[2300px]:text-[32px] min-[2450px]:text-[34px]
-            min-[2560px]:text-[36px]
-                      
-          
-          leading-[100%]
-          tracking-[0%]
-          font-style-normal
-        "
-      >
-        {bannerText}
-      </p>
+      {isMenuOpen && (
+  <>
+   
+   
+   
+    <div
+      className="lg:hidden fixed inset-0 z-40 bg-black/50 backdrop-blur-sm"
+      onClick={() => setIsMenuOpen(false)}
+    />
+
+   
+   
+    <div
+      className={`
+        lg:hidden fixed top-0 bottom-0 right-0 z-50
+        w-[50vw]                         
+        sm:w-[50vw]                      
+        md:w-[40vw]                       
+        bg-white/98 backdrop-blur-xl
+        shadow-[-12px_0_30px_-8px_rgba(0,0,0,0.25)]
+        border-l border-gray-100
+        transition-transform duration-500 ease-out
+        ${isMenuOpen 
+          ? 'translate-x-0' 
+          : 'translate-x-full'}
+      `}
+    >
+      <div className="relative h-full flex flex-col px-6 sm:px-10 pt-20 pb-16">
+        
+       
+        
+        <button
+          className="absolute right-5 top-5 text-gray-700 hover:text-black transition-colors"
+          onClick={() => setIsMenuOpen(false)}
+          aria-label="Close menu"
+        >
+          <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+       
+
+        <nav className="flex-1 flex flex-col items-center justify-center gap-9 sm:gap-11">
+          {navItems.map((item) => (
+            <a
+              key={item.label}
+              href={item.href}
+              className="
+                font-['Helvetica','Arial',sans-serif] font-normal
+                text-[18px] sm:text-[19px] md:text-[20px]
+                text-gray-900 tracking-tight
+                hover:text-black transition-colors duration-300
+                active:scale-98
+                w-full text-center
+              "
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+       
+      </div>
     </div>
+  </>
+)}
+    </nav>
+  );
+};
+
+export default Navbar;

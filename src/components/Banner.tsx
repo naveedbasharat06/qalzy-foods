@@ -17,24 +17,21 @@ const Banner: React.FC = () => {
 
     h-[clamp(67px,calc(87px*100vw/1440px),140px)]
 
-    /* Top position */
+    
     top-[clamp(67px,calc(81px*100vw/1440px),140px)]
 
-    /* Horizontal Padding */
-    pl-[clamp(18px,calc(140px*100vw/1440px),220px)]
-    pr-[clamp(12px,calc(20px*100vw/1440px),30px)]
+    
+    pl-[clamp(18px,calc(140px*100vw/1440px),230px)]
+    pr-[clamp(12px,calc(20px*100vw/1440px),27px)]
 
-    /* Gap */
-    gap-[clamp(40px,calc(96px*100vw/1440px),96px)]
-
-    /* Max width cap */
-    max-w-[2560px]
+   
   "
 >
   <p
     className="
       font-['Aeonik Trial'] font-normal leading-[100%] tracking-[0%]
-      text-[clamp(16px,calc(20px*100vw/1440px),36px)]
+      
+      text-[clamp(16px,calc(21px*100vw/1440px),37px)]
     "
   >
     {bannerText}
