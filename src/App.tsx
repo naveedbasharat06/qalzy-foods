@@ -1,37 +1,31 @@
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './components/layout/Navbar'
+import Footer from './components/layout/Footer'
+import Home from './pages/Home'
+import Blog from './pages/Blog'
+import Shop from './pages/Shop'
+import Hero from './components/sections/Hero'
 
-
-import Banner from './components/Banner'
-import HeroSection from './components/Hero'
-import Navbar from './components/Navbar'
-//import FooterImage from './components/Footer'
-import Qalzy from './components/Qalzy'
-import DescriptionSection from './components/Calorie-Counting'
-import CalorieConsumedSection from './components/Calories-Consumed'
-import CrackingEgg from './components/Craking-Egg'
-import BanaPayer from './components/BanaPayer'
-
-import ScanMeal from './components/Scan-Meal'
 function App() {
- 
-
   return (
-    <>
-
-
-    <div>
-
+    <div className="min-h-screen flex flex-col">
       <Navbar />
-      <Banner />
-      <HeroSection />
-     
-    
-      
-     
 
+
+      <main className="">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/ai-calorie" element={<AiCalorie />} /> */}
+          <Route path="/blog" element={<Blog />} />
+          {/* <Route path="/calorie-tracking" element={<CalorieTracking />} /> */}
+          <Route path="/shop" element={<Shop />} />
+        </Routes>
+      </main>
+     
     
-    </div>
+
       
-    </>
+    </div>
   )
 }
 
