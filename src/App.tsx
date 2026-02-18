@@ -5,28 +5,29 @@ import Home from './pages/Home'
 import Blog from './pages/Blog'
 import Shop from './pages/Shop'
 import Hero from './components/sections/Hero'
+import AIScale from './pages/AI-Scale'
+import CTA from './pages/Calorie Tracking App'
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+   <div className="min-h-screen">
       <Navbar />
 
-
-      <main className="">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* <Route path="/ai-calorie" element={<AiCalorie />} /> */}
-          <Route path="/blog" element={<Blog />} />
-          {/* <Route path="/calorie-tracking" element={<CalorieTracking />} /> */}
-          <Route path="/shop" element={<Shop />} />
-        </Routes>
-      </main>
      
-    
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/ai-scale" element={<AIScale></AIScale>} />
+        <Route path="/blog" element={<Blog />}/>
+        <Route path="/cta" element={<CTA />} />
+        <Route path="/shop" element={<Shop />} />
 
       
+        <Route path="*" element={<div className="text-center py-20">404 - Page not found</div>} />
+      </Routes>
     </div>
   )
 }
+
 
 export default App

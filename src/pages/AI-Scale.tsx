@@ -1,11 +1,11 @@
 
 import React from 'react';
 
-const Banner: React.FC = () => {
+const AIScale: React.FC = () => {
  
   return (
 
-    <div>
+    <div className='bg-amber-700 mt-[200px]'>
         <h1>AI-scale</h1>
     </div>
  
@@ -13,7 +13,7 @@ const Banner: React.FC = () => {
   );
 };
 
-export default Banner;
+export default AIScale;
 
 
 

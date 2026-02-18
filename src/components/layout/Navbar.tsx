@@ -6,10 +6,10 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navItems = [
-    { label: 'AI Scale', href: '#' },
-    { label: 'Calorie Tracking App', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Shop', href: '#' },
+    { label: 'AI Scale', href: 'ai-scale' },
+    { label: 'Calorie Tracking App', href: 'CTA' },
+    { label: 'Blog', href: 'blog' },
+    { label: 'Shop', href: 'shop' },
   ];
 
   return (

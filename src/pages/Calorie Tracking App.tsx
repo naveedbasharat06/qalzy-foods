@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const Banner: React.FC = () => {
+const CTA: React.FC = () => {
  
   return (
 
@@ -13,7 +13,7 @@ const Banner: React.FC = () => {
   );
 };
 
-export default Banner;
+export default CTA;
 
 
 
