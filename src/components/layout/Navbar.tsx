@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { label: 'AI Scale', href: 'ai-scale' },
-    { label: 'Calorie Tracking App', href: 'CTA' },
+    { label: 'Calorie Tracking App', href: 'cta' },
     { label: 'Blog', href: 'blog' },
     { label: 'Shop', href: 'shop' },
   ];
@@ -114,15 +114,16 @@ const Navbar: React.FC = () => {
             lg:hidden
             flex items-center justify-between
             w-11 h-11 sm:w-12 sm:h-12
-            text-gray-800
-            rounded-full
-            hover:bg-gray-100 active:bg-gray-200
-            focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:ring-offset-2
-            transition-all duration-200
-            min-[320px]:-mr-35
+            
+           
+          
+            min-[320px]:-mr-45
               min-[375px]:-mr-50
               min-[425px]:-mr-60
               min-[768px]:-mr-140
+              min-[1022px]:-mr-200
+               
+
             
           
           `}
@@ -133,7 +134,7 @@ const Navbar: React.FC = () => {
             className={`
               w-7 h-7 sm:w-8 sm:h-8 
               transition-transform duration-400 
-              ${isMenuOpen ? 'rotate-90 scale-110' : 'rotate-0 scale-100'}
+              ${isMenuOpen ? 'rotate-90 scale-100' : 'rotate-0 scale-100'}
             `}
             fill="none"
             stroke="currentColor"
@@ -141,7 +142,7 @@ const Navbar: React.FC = () => {
             viewBox="0 0 24 24"
           >
             {isMenuOpen ? (
-              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              <path  strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             ) : (
               <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             )}
@@ -165,9 +166,13 @@ const Navbar: React.FC = () => {
           <div
             className={`
               fixed inset-0 z-50
-              bg-gradient-to-br from-violet-950 via-fuchsia-950 to-rose-900
-              transition-all duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)]
-              ${isMenuOpen 
+            
+     bg-gradient-to-br from-green-400 via-amber-400  to-white-100 
+         
+         transition-all duration-[1600ms] ease-[cubic-bezier(0.22,1,0.36,1)]
+            
+            
+             ${isMenuOpen 
                 ? 'translate-y-0 opacity-100' 
                 : '-translate-y-full opacity-0 pointer-events-none'}
             `}

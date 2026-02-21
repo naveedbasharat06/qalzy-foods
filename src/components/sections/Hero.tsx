@@ -11,9 +11,11 @@ const Hero = () => {
         relative
         w-full
         min-h-[713px] 
-        min-w-[372px]              // enforced everywhere — never smaller than 713px
-        overflow-hidden
-        bg-black                    // fallback
+        min-w-[372px] 
+        max-w-full 
+        max-h-[1220px]
+                 
+                           // fallback
       `}
     >
 
@@ -21,10 +23,12 @@ const Hero = () => {
       <div className="hidden min-[426px]:block absolute inset-0">
         <div
           className={`
-            relative w-full
-            aspect-[1440/713]          
-            min-h-[713px]
-            h-full
+            absolute w-full
+                    min-h-[300px]
+
+           min-h-[clamp(300px,calc(713px*100vw/1440px),1280px)] 
+        
+           
           `}
         >
           <img
@@ -43,7 +47,7 @@ const Hero = () => {
         <div
           className={`
             relative w-full
-            aspect-[1440/713]           // keep ratio consistent (or change to e.g. 9/16 if very vertical)
+                     
             min-h-[713px]
             h-full
           `}
@@ -82,7 +86,7 @@ const Hero = () => {
 
 
 
-    pl-[clamp(6px,calc(110px*100vw/1440px),200px)]
+    pl-[clamp(6px,calc(110px*100vw/1440px),220px)]
 
 
     pr-[clamp(8px,calc(10px*100vw/1440px),17px)]
@@ -151,18 +155,37 @@ const Hero = () => {
         tracking-normal leading-none
 
 
-      mb-[clamp(6px,calc(16px*100vw/1440px),32px)]
+      mb-[clamp(6px,calc(16px*100vw/1440px),34px)]
       min-[320px]:mb-[2px]
+      min-[768px]:mb-[4px]
+      min-[900px]:mb-[7px]
+      min-[1024px]:mb-[9px]
+      min-[1200px]:mb-[14px]
+      min-[1300px]:mb-[16px]
+      min-[1440px]:mb-[18px]
+      min-[1600px]:mb-[20px]
+      min-[1700px]:mb-[21px]
+      min-[1800px]:mb-[22px]
+      min-[1900px]:mb-[22px]
+      min-[2000px]:mb-[24px]
+      min-[2100px]:mb-[26px]
+      min-[2200px]:mb-[28px]
+      min-[2300px]:mb-[30px]
+      min-[2400px]:mb-[32px]
+      min-[2500px]:mb-[33px]
+      min-[2560px]:mb-[34px]
 
  min-[320px]:mb-[clamp(2px,calc(6px*100vw/320px),12px)]
 
-       min-[1440px]:mt-[clamp(10px,calc(16px*100vw/1440px),22px)]
+       min-[1440px]:mt-[clamp(5px,calc(16px*100vw/1440px),27px)]
 
 
-mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
+mt-[clamp(5px,calc(16px*100vw/1440px),27px)]
 
       max-w-[clamp(100px,calc(790px*100vw/1440px),1400px)]
-    `}
+
+   
+      `}
   >
             Get 50% discount
           </p>
@@ -186,7 +209,9 @@ mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
   {/* Stars container – matches Frame specs */}
   <div
     className={`
-      flex items-center justify-between   gap-[clamp(0.5px,calc(8px*100vw/1440px),16px)] text-[clamp(5.5px,calc(24px*100vw/1440px),48px)]
+      flex items-center justify-between   
+      gap-[clamp(0.5px,calc(8px*100vw/1440px),16px)]
+       text-[clamp(5.5px,calc(24px*100vw/1440px),48px)]
       
     `}
   >
@@ -220,9 +245,26 @@ mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
 
       rounded-[clamp(12px,calc(24px*100vw/1440px),48px)]
 
-   mt-[clamp(2px,calc(32px*100vw/1440px),64px)]
+   mt-[clamp(2px,calc(34px*100vw/1440px),54px)]
+   
 
    min-[320px]:mt-[clamp(2px,calc(4px*100vw/320px),20px)]
+   min-[900px]:mt-[18px]
+   min-[1024px]:mt-[20px]
+   min-[1200px]:mt-[24px]
+   min-[1300px]:mt-[30px]
+   min-[1440px]:mt-[34px]
+   min-[1600px]:mt-[36px]
+   min-[1700px]:mt-[38px]
+   min-[1800px]:mt-[39px]
+   min-[1900px]:mt-[40px]
+   min-[2000px]:mt-[42px]
+   min-[2100px]:mt-[44px]
+   min-[2200px]:mt-[46px]
+   min-[2300px]:mt-[48px]
+   min-[2400px]:mt-[52px]
+   min-[2500px]:mt-[54px]
+   min-[2560px]:mt-[54px]
 
 
 
@@ -252,6 +294,23 @@ mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
         </div>
       </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       {/* ─── TEXT BLOCK – MOBILE (<426px) ─── centered, ~305px wide feel ─── */}
       <div
         className={`
@@ -259,20 +318,41 @@ mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
           flex-col absolute inset-0 z-10
           items-center justify-center
          
-          px-[33px]
+         
+        min-[405px]:pt-[85px]
+          min-[375px]:pt-[85px]
+          min-[320px]:pt-[85px]
+
           text-center
+         
         `}
       >
-        <div className="w-full max-w-[305px] max-h-[523px] flex flex-col justify-center gap-6">
+        <div className="w-full 
+
+
+        min-[405px]:max-w-[352px] 
+        
+        min-[375px]:max-w-[310px]
+        min-[320px]:max-w-[305px]
+        
+        max-h-[523px] flex flex-col justify-center gap-5">
           <h1
             className={`
              font-['Inter']
             font-normal
             tracking-normal
-            leading-none
+            leading-[113%]
             text-white
               text-[36px]
+              min-[400px]:text-[40px]
+             min-[405px]:pl-[50px]
+              min-[375px]:pl-[38px]
+              min-[320px]:pl-[33px]
+             
               max-h-[176px]
+
+              word-spacing-[0.8em]             /* ← this adds space between words */
+    text-balance
             `}
           >
             The only kitchen scale that <br />auto-tracks calories
@@ -282,10 +362,14 @@ mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
           <p className="
           font-['Helvetica'] 
         tracking-normal
-        drop-shadow-lg
-       
+        leading-[115%]
+        word-spacing-[-0.8em]  
+        mb-[-2px]
+       mt-[-5px]
         text-white
         text-[20px]
+        min-[400px]:text-[23px]
+        pl-[-35px]
           ">
             Lorem ipsum dolor sit amet consectetur. Enim vel pulvinar auctor id.
             Scelerisque in et molestie eget in auctor bibendum feugiat.
@@ -296,25 +380,41 @@ mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
           font-['Helvetica'] 
         tracking-normal
         drop-shadow-lg
-       
+       mt-[-7px]
         text-white
-        text-[36px]
+        text-[34px]
+        min-[375px]:text-[36px]
         
+        min-[400px]:text-[40px]
+        min-[405px]:pr-[20px]  
+         min-[375px]:pr-[25px] 
+         min-[320px]:pr-[27px] 
+          
         ">
           
           
             Get 50% discount
           </p>
 
-          <div className="flex flex-col items-center gap-3 text-white ">
-            <div className="flex text-2xl sm:text-3xl">★★★★★</div>
+          <div className="flex flex-col mt-[-15px] items-center gap-1 text-white ">
+            <div className="flex
+            
+            min-[405px]:text-3xl 
+            min-[375px]:text-2xl
+            
+            
+            ">★★★★★</div>
             <span className="
           font-['Helvetica'] 
         tracking-normal
         drop-shadow-lg
        
         text-white
-        text-[20px]">5,128+ early bird pre-orders</span>
+        text-[20px]
+        min-[400px]:text-[24px]
+        pl-[30px]
+
+        ">5,128+ early bird pre-orders</span>
           
           
           
@@ -324,9 +424,28 @@ mt-[clamp(6px,calc(16px*100vw/1440px),22px)]
             className={`
       bg-[#4AD769] hover:bg-[#48C263] active:bg-[#3EB158]
               text-white font-bold
-              px-10 py-4 rounded-full text-lg
-              shadow-lg w-full max-w-[280px] mx-auto
-              transition-all
+              min-[405px]:px-12
+              min-[375px]:px-8
+              min-[320px]:px-6
+              
+              min-[375px]:py-3
+              min-[405px]:py-4 
+              min-[320px]:py-3
+              
+              rounded-full text-[20px]
+              w-full max-w-[260px]
+              min-[405px]:max-w-[280px]
+
+              mx-auto
+             
+               shadow-[0_4px_6px_rgb(72,194,99)]
+    hover:shadow-[0_5px_10px_rgba(72,194,99,0.35)]
+    
+    transition-all duration-300
+    min-[320px]:mb-[110px]
+   min-[400px]:mt-[8px]
+
+
             `}
           >
             PREORDER NOW
