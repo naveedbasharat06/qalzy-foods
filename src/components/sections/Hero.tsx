@@ -10,7 +10,7 @@ const Hero = () => {
       className={`
         relative
         w-full
-        min-h-[713px] 
+        min-h-[800px]
         min-w-[372px] 
         max-w-full 
         max-h-[1220px]
@@ -319,9 +319,9 @@ mt-[clamp(5px,calc(16px*100vw/1440px),27px)]
           items-center justify-center
          
          
-        min-[405px]:pt-[85px]
-          min-[375px]:pt-[85px]
-          min-[320px]:pt-[85px]
+        min-[405px]:pt-[40px]
+          min-[375px]:pt-[35px]
+          min-[320px]:pt-[50px]
 
           text-center
          
@@ -330,10 +330,10 @@ mt-[clamp(5px,calc(16px*100vw/1440px),27px)]
         <div className="w-full 
 
 
-        min-[405px]:max-w-[352px] 
+        min-[405px]:max-w-[400px] 
         
-        min-[375px]:max-w-[310px]
-        min-[320px]:max-w-[305px]
+        min-[375px]:max-w-[356px]
+        min-[320px]:max-w-[335px]
         
         max-h-[523px] flex flex-col justify-center gap-5">
           <h1
@@ -343,37 +343,46 @@ mt-[clamp(5px,calc(16px*100vw/1440px),27px)]
             tracking-normal
             leading-[113%]
             text-white
-              text-[36px]
-              min-[400px]:text-[40px]
-             min-[405px]:pl-[50px]
-              min-[375px]:pl-[38px]
-              min-[320px]:pl-[33px]
+              text-[38px]
+              min-[405px]:text-[42px]
+              min-[375px]:text-[41px]
+              min-[320px]:text-[38px]
+             min-[405px]:pl-[40px]
+              min-[375px]:pl-[35px]
+              min-[320px]:pl-[40px]
              
               max-h-[176px]
 
-              word-spacing-[0.8em]             /* ← this adds space between words */
-    text-balance
+             gap-2.5
+             
+
+              text-balance
             `}
           >
             The only kitchen scale that <br />auto-tracks calories
           </h1>
 
 
-          <p className="
-          font-['Helvetica'] 
-        tracking-normal
-        leading-[115%]
-        word-spacing-[-0.8em]  
-        mb-[-2px]
-       mt-[-5px]
-        text-white
-        text-[20px]
-        min-[400px]:text-[23px]
-        pl-[-35px]
-          ">
-            Lorem ipsum dolor sit amet consectetur. Enim vel pulvinar auctor id.
-            Scelerisque in et molestie eget in auctor bibendum feugiat.
-          </p>
+    <p className="
+    font-['Helvetica'] 
+  tracking-normal
+  leading-[115%]
+  word-spacing-[-0.6em] 
+  mb-[-2px]
+ mt-[-5px]
+ min-[375px]:mt-[10px]
+ min-[405px]:mt-[10px]
+  text-white
+  text-[22px]
+  min-[400px]:text-[23px]
+  min-[375px]:w-[350px]
+  min-[375px]:pl-[5px]
+  min-[405px]:w-[380px]
+  min-[405px]:pl-6.25
+    ">
+      Lorem ipsum dolor sit amet consectetur. Enim vel pulvinar auctor id.
+      Scelerisque in et molestie eget in auctor bibendum feugiat.
+    </p>
 
           <p className="
           
@@ -396,11 +405,12 @@ mt-[clamp(5px,calc(16px*100vw/1440px),27px)]
             Get 50% discount
           </p>
 
-          <div className="flex flex-col mt-[-15px] items-center gap-1 text-white ">
+          <div className="flex flex-col mt-[-5px] items-center gap-2 text-white ">
             <div className="flex
             
             min-[405px]:text-3xl 
-            min-[375px]:text-2xl
+            min-[375px]:text-3xl
+            min-[320px]:text-3xl
             
             
             ">★★★★★</div>
@@ -412,6 +422,8 @@ mt-[clamp(5px,calc(16px*100vw/1440px),27px)]
         text-white
         text-[20px]
         min-[400px]:text-[24px]
+        min-[320px]:text-[22px]
+        min-[320px]:pl-[15px]
         pl-[30px]
 
         ">5,128+ early bird pre-orders</span>
@@ -442,8 +454,11 @@ mt-[clamp(5px,calc(16px*100vw/1440px),27px)]
     hover:shadow-[0_5px_10px_rgba(72,194,99,0.35)]
     
     transition-all duration-300
-    min-[320px]:mb-[110px]
+    min-[320px]:mb-[75px]
+    min-[375px]:mb-[70px]
+    min-[375px]:mt-[10px]
    min-[400px]:mt-[8px]
+   min-[320px]:mt-[10px]
 
 
             `}

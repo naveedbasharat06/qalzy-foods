@@ -1,6 +1,6 @@
 import Banner from '../components/sections/Banner'
 import Hero from '../components/sections/Hero'
-
+import MeetQalzy from '../components/sections/Meet-Qalzy'
 export default function Home() {
   return (
     <>
@@ -22,7 +22,13 @@ export default function Home() {
         '>
       <Hero />
 
+
+      
+     
+
     </div>
+
+    
     </>
   )
 }
